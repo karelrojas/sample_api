@@ -1,5 +1,6 @@
 package com.krojas.sample.api.members;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,16 +16,18 @@ public class Vendor {
 	@GeneratedValue
 	private Integer id;
 	private String name;
+	private LocalDate birthDate;
 	private List<String> tags;
 	
 	public Vendor() {
 		
 	}
 	
-	public Vendor(Integer id, String name, List<String> tags) {
+	public Vendor(Integer id, String name, LocalDate birthDate, List<String> tags) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.birthDate = birthDate;
 		this.tags = tags;
 	}
 
@@ -55,6 +58,10 @@ public class Vendor {
 	@Override
 	public String toString() {
 		return "Vendor [id=" + id + ", name=" + name + ", tags=" + tags + "]";
+	}
+
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 	
 	
