@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.krojas.sample.api.members.Vendor;
 import com.krojas.sample.api.repository.VendorRepository;
-import com.krojas.sample.api.vendors.Vendor;
 
 @Service
 public class VendorService {

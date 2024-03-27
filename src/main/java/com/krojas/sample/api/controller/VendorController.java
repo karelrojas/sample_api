@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.krojas.sample.api.members.Vendor;
 import com.krojas.sample.api.repository.VendorRepository;
 import com.krojas.sample.api.service.VendorService;
-import com.krojas.sample.api.vendors.Vendor;
 
 
 @RestController

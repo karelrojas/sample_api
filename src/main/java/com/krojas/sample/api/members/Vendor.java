@@ -1,4 +1,4 @@
-package com.krojas.sample.api.vendors;
+package com.krojas.sample.api.members;
 
 import java.util.List;
 
