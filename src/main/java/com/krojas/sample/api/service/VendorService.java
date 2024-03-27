@@ -1,6 +1,7 @@
 package com.krojas.sample.api.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,13 @@ public class VendorService {
 	
 	public List<Vendor> getAllVendors() {
 		return vendorRepo.findAll();
+	}
+	
+	public Vendor getVendor(Integer id) {
+		Optional<Vendor> vendor = vendorRepo.findById(id);
+		// Implement not found exception
+		
+		return vendor.get();
 	}
 	
 	public void addVendor(Vendor newVendor) {
