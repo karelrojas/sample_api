@@ -33,4 +33,8 @@ public class AttendeeService {
 	public void addAttendee(Attendee newAttendee) {
 		attendeeRepo.save(newAttendee);
 	}
+	
+	public void deleteAttendee(Integer id) {
+		attendeeRepo.deleteById(id);
+	}
 }

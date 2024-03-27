@@ -32,4 +32,8 @@ public class VendorService {
 	public void addVendor(Vendor newVendor) {
 		vendorRepo.save(newVendor);
 	}
+	
+	public void deleteVendor(Integer id) {
+		vendorRepo.deleteById(id);
+	}
 }
