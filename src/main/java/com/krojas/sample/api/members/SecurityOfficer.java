@@ -5,10 +5,15 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class SecurityOfficer extends Security{
 
 	private String zone;
 	@JsonIgnore
+	@OneToMany
 	private List<SecurityGuard> subordinates;
 	
 	public SecurityOfficer(Integer id, String firstName, String lastName, LocalDate birthDate, String zone) {

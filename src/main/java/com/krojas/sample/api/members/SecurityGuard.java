@@ -2,7 +2,11 @@ package com.krojas.sample.api.members;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class SecurityGuard extends Security {
+
 
 	private String zone;
 
