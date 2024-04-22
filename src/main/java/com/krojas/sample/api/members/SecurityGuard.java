@@ -3,12 +3,14 @@ package com.krojas.sample.api.members;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class SecurityGuard extends Security {
 
-
 	private String zone;
+	@ManyToOne
+	private SecurityOfficer officer;
 
 	public SecurityGuard() {
 		
@@ -25,6 +27,10 @@ public class SecurityGuard extends Security {
 
 	public String getZone() {
 		return zone;
+	}
+	
+	public SecurityOfficer getOfficer() {
+		return officer;
 	}
 	
 	
