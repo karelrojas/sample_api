@@ -3,10 +3,8 @@ package com.krojas.sample.api.members;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
@@ -21,6 +19,8 @@ public class Security {
 	protected String lastName;
 	@Column
 	protected LocalDate birthDate;
+	@Column
+	protected String zone;
 	
 	public Integer getId() {
 		return id;
@@ -33,6 +33,9 @@ public class Security {
 	}
 	public LocalDate getBirthDate() {
 		return birthDate;
+	}
+	public String getZone() {
+		return zone;
 	}
 	
 }

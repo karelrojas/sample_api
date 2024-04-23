@@ -8,7 +8,6 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class SecurityGuard extends Security {
 
-	private String zone;
 	@ManyToOne
 	private SecurityOfficer officer;
 
@@ -23,10 +22,6 @@ public class SecurityGuard extends Security {
 		this.lastName = lastName;
 		this.birthDate = birthDate;
 		this.zone = zone;
-	}
-
-	public String getZone() {
-		return zone;
 	}
 	
 	public SecurityOfficer getOfficer() {

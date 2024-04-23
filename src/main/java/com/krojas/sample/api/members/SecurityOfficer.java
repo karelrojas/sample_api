@@ -11,10 +11,13 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class SecurityOfficer extends Security{
 
-	private String zone;
 	@JsonIgnore
 	@OneToMany
 	private List<SecurityGuard> subordinates;
+	
+	public SecurityOfficer( ) {
+		
+	}
 	
 	public SecurityOfficer(Integer id, String firstName, String lastName, LocalDate birthDate, String zone) {
 		super();
@@ -23,10 +26,6 @@ public class SecurityOfficer extends Security{
 		this.lastName = lastName;
 		this.birthDate = birthDate;
 		this.zone = zone;
-	}
-
-	public String getZone() {
-		return zone;
 	}
 
 	public List<SecurityGuard> getSubordinates() {
