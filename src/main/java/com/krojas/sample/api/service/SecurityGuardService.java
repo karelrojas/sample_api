@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.krojas.sample.api.members.SecurityGuard;
+import com.krojas.sample.api.members.SecurityOfficer;
 import com.krojas.sample.api.repository.SecurityGuardRepository;
+import com.krojas.sample.api.repository.SecurityOfficerRepository;
 
 @Service
 public class SecurityGuardService {
@@ -23,6 +25,7 @@ public class SecurityGuardService {
 	
 	public SecurityGuard getGuard(Integer id) {
 		Optional<SecurityGuard> guard = securityGuardRepo.findById(id);
+		System.out.println(guard.get());
 		// check if guard exists
 		
 		return guard.get();

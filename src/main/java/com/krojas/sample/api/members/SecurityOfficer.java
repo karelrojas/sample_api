@@ -11,7 +11,6 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class SecurityOfficer extends Security{
 
-	@JsonIgnore
 	@OneToMany
 	private List<SecurityGuard> subordinates;
 	
@@ -31,6 +30,18 @@ public class SecurityOfficer extends Security{
 	public List<SecurityGuard> getSubordinates() {
 		return subordinates;
 	}
+	
+	public void setSubordinate(SecurityGuard guard) {
+		subordinates.add(guard);
+	}
+
+	@Override
+	public String toString() {
+		return "SecurityOfficer [subordinates=" + subordinates + ", id=" + id + 
+				", lastName=" + lastName + ", zone=" + zone + "]";
+	}
+	
+	
 	
 	
 	
