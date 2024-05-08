@@ -1,22 +1,35 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const getGuard = () => {
+    axios.get('http://localhost:8081/event/members/guards')
+      .then(res => {
+        console.log(res.data);
+      }).catch(err => {
+        console.log(err);
+      })
+  }
+
+  const getAttendee = () => {
+    axios.get('http://localhost:8081/event/members/attendees')
+    .then(res => {
+      console.log(res.data);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Test</p>
+        <div>Example</div>
+        <button onClick={getGuard} className="btn">Guard Info</button>
+        <button onClick={getAttendee} className="btn">Attendee Info</button>
       </header>
     </div>
   );
