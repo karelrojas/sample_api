@@ -6,7 +6,7 @@ function App() {
   const [members, setMembers] = useState([]);
 
   // useEffect(() => {
-  //   getAttendees();
+  //   getMembers();
   // }, []);
 
   // Sends and recieves GET request from selection
@@ -25,13 +25,24 @@ function App() {
             <option value="guards">Guards</option>
             <option value="officers">Officers</option>
           </select>
-        <ul className="members-list">
+        <div className="members-list">
+          <div className="members-list-row header">
+            <div className="members-column">ID</div>
+            <div className="members-column">First Name</div>
+            <div className="members-column">Last Name</div>
+            <div className="members-column">Birth Date</div>
+          </div>
           {members.map((data) => {
             return (
-              <li className="members-list-item" key={data.id}>{data.id} {data.firstName} {data.lastName}</li>
+              <div className="members-list-row" key={data.id}>
+                <div className="members-column">{data.id}</div>
+                <div className="members-column">{data.firstName}</div>
+                <div className="members-column">{data.lastName}</div>
+                <div className="members-column">{data.birthDate}</div>
+              </div>
             )
           })}
-        </ul>
+        </div>
       </header>
     </div>
   );
