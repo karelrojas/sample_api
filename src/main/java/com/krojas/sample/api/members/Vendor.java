@@ -13,7 +13,9 @@ public class Vendor {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private String name;
+	private String firstName;
+	private String lastName;
+	private String vendorName;
 	private LocalDate birthDate;
 	private List<String> tags;
 	
@@ -21,10 +23,12 @@ public class Vendor {
 		
 	}
 	
-	public Vendor(Integer id, String name, LocalDate birthDate, List<String> tags) {
+	public Vendor(Integer id, String firstName, String lastName, String vendorName, LocalDate birthDate, List<String> tags) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.vendorName = vendorName;
 		this.birthDate = birthDate;
 		this.tags = tags;
 	}
@@ -37,12 +41,16 @@ public class Vendor {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getVendorName() {
+		return vendorName;
 	}
 
 	public List<String> getTags() {
@@ -55,7 +63,7 @@ public class Vendor {
 
 	@Override
 	public String toString() {
-		return "Vendor [id=" + id + ", name=" + name + ", tags=" + tags + "]";
+		return "Vendor [id=" + id + ", firstName=" + firstName + "]";
 	}
 
 	public LocalDate getBirthDate() {
