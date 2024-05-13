@@ -16,6 +16,24 @@ function App() {
     setMembers(res.data);
   }
 
+  function MembersHeader() {
+    return (
+      <div className="members-list-row header">
+        <div className="members-column">ID</div>
+        <div className="members-column">First Name</div>
+        <div className="members-column">Last Name</div>
+        <div className="members-column">Birth Date</div>
+      </div>
+    )
+  }
+
+  function VendorName({info}) {
+    if (info.vendorName != null) {
+      return <div className="members-column">{info.vendorName}</div>;
+    }
+    return null;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,12 +44,7 @@ function App() {
             <option value="officers">Officers</option>
           </select>
         <div className="members-list">
-          <div className="members-list-row header">
-            <div className="members-column">ID</div>
-            <div className="members-column">First Name</div>
-            <div className="members-column">Last Name</div>
-            <div className="members-column">Birth Date</div>
-          </div>
+          <MembersHeader />
           {members.map((data) => {
             return (
               <div className="members-list-row" key={data.id}>

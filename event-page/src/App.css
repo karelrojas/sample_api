@@ -22,9 +22,6 @@
 }
 
 .members-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   border: solid #14171a 3px;
 }
 
